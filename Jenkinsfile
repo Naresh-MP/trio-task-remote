@@ -1,32 +1,24 @@
-pipeline{
+pipeline {
     agent any
-    {
+    stages {
         stage ("Build the docker images "){
             steps {
                 sh '''
-                docker build -t --name mysql ./db
+                docker build -t nareshm5859/mysql ./db
                 echo "mysql image build - successfull"
-                docker build -t --name flask-app ./flask-app
+                docker build -t nareshm5859/flask-app ./flask-app
                 echo "flask-app image build - successfull"
-                docker build -t --name nginx ./nginx
+                docker build -t nareshm5859/nginx ./nginx
                 echo "ngnix image build - successfull"
                 '''
             }
         }
-        stage ("login and push"){
+        stage ("Push"){
             steps {
                 sh '''
-                docker login -u nareshm5859 -p kezqyt-hondyx-5Rjru
-                docker push mysql
-                docker push flask-app
-                docker push nginx
-                '''
-            }
-        }
-        stage ("logout"){
-            steps {
-                sh '''
-                docker logout
+                docker push nareshm5859/mysql
+                docker push nareshm5859/flask-app
+                docker push nareshm5859/nginx
                 '''
             }
         }
