@@ -34,6 +34,6 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: nareshm5859/trio-deploy-flask-db:latest
+        image: nareshm5859/trio-flask-app:latest
         ports:
         - containerPort: 5000
