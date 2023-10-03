@@ -6,7 +6,7 @@ metadata:
   app: trio-nginx
 spec:
  containers:
- - name: nginx
+ - name: nginx-container
    image: nareshm5859/trio-nginx:latest
    ports:
    - containerPort: 80

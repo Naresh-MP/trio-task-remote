@@ -6,10 +6,15 @@ metadata:
   app: flask-db
 spec:
  containers:
- - name: flask-db
+ - name: flask-db-container
    image: nareshm5859/trio-flask-db:latest
    ports:
    - containerPort: 3306
+   env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: naresh
+    - name: MYSQL_DATABASE
+      value: flask-db
 
 ---
 
