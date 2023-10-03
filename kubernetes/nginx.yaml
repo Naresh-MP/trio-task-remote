@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: trio-nginx
+ labels:
+  app: trio-nginx
+spec:
+ containers:
+ - name: nginx
+   image: nareshm5859/trio-nginx:latest
+   ports:
+   - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+ name : trio-nginx
+spec:
+ selector:
+  app: trio-nginx
+ ports:
+ - protocol: TCP
+   port: 80
+   targetPort: 80
+ type: LoadBalancer
