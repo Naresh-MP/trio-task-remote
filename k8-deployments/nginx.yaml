@@ -10,7 +10,7 @@ spec:
  - protocol: TCP
    port: 80
    targetPort: 80
- type: ClusterIP
+ type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -30,10 +30,10 @@ spec:
   template:
     metadata:
       labels:
-        app: flask-app
+        app: nginx
     spec:
       containers:
-      - name: flask-app
+      - name: nginx
         image: nareshm5859/trio-nginx:latest
         ports:
         - containerPort: 80
