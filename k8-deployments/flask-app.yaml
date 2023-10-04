@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: nareshm5859/trio-nm-flask:latest
+        image: nareshm5859/trio-nm-flask:v1
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
