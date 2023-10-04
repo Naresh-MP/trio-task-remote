@@ -35,5 +35,6 @@ spec:
       containers:
       - name: flask-app
         image: nareshm5859/trio-flask-app:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000

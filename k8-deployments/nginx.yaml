@@ -35,5 +35,6 @@ spec:
       containers:
       - name: nginx
         image: nareshm5859/trio-nginx:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
