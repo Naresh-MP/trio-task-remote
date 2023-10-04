@@ -38,14 +38,14 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
-      env:
-      - name: MYSQLPWD
-        valueFrom:
-          secretKeyRef:
-            name: credentials
-            key: MYSQL_PWD
-      - name: MYSQLDB
-        valueFrom:
-          secretKeyRef:
-            name: credentials
-            key: MYSQL_DB
+        env:
+        - name: MYSQLPWD
+          valueFrom:
+            secretKeyRef:
+              name: credentials
+              key: MYSQL_PWD
+        - name: MYSQLDB
+          valueFrom:
+            secretKeyRef:
+              name: credentials
+              key: MYSQL_DB
